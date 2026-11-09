@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyễn Phúc Thảo Nguyên - Bài tập CSS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--text:#222;--muted:#666;--accent:#00676b;}
+@media (prefers-color-scheme:dark){:root{--bg:#15181b;--card:#1f2328;--text:#eee;--muted:#aaa;--accent:#4fd1c5;}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);}
+.wrap{max-width:720px;margin:0 auto;padding:30px 16px;}
+.profile{background:var(--card);border-radius:14px;padding:28px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.profile h1{margin:0 0 4px;font-size:26px;}
+.profile p{margin:4px 0;color:var(--muted);}
+.social{margin-top:14px;}
+.social a{font-size:28px;margin:0 8px;color:var(--accent);transition:transform .2s;display:inline-block;}
+.social a:hover{transform:scale(1.2);}
+h2{margin:30px 0 12px;font-size:20px;}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+.list a{display:block;background:var(--card);color:var(--text);text-decoration:none;padding:14px 16px;border-radius:10px;
+  box-shadow:0 1px 4px rgba(0,0,0,.1);border-left:4px solid var(--accent);transition:transform .2s;}
+.list a:hover{transform:translateY(-3px);}
+.list i{color:var(--accent);margin-right:8px;}
+.list small{display:block;color:var(--muted);margin-top:4px;}
+footer{text-align:center;color:var(--muted);margin-top:30px;font-size:13px;}
+</style></head><body>
+<div class="wrap">
+ <section class="profile">
+  <h1>Nguyễn Phúc Thảo Nguyên</h1>
+  <p>MSSV: 31221023069</p>
+  <p>Đại học Kinh tế TP.HCM (UEH) &ndash; Khoa CNTTKD</p>
+  <div class="social">
+   <a href="https://github.com/tn063167-lab/Tuan3-Venha" title="GitHub"><i class="fa-brands fa-github"></i></a>
+  </div>
+ </section>
+
+ <h2><i class="fa-solid fa-folder-open"></i> Bài tập CSS</h2>
+ <ul class="list">
+  <li><a href="BaiTap2.html"><i class="fa-solid fa-font"></i>Bài tập 2<small>Định dạng văn bản</small></a></li>
+  <li><a href="BaiTap4.html"><i class="fa-solid fa-bars"></i>Bài tập 4<small>Menu inline-block</small></a></li>
+  <li><a href="BaiTap5.html"><i class="fa-solid fa-server"></i>Bài tập 5<small>Landing page hosting</small></a></li>
+  <li><a href="BaiTap6.html"><i class="fa-solid fa-images"></i>Bài tập 6<small>Portfolio</small></a></li>
+  <li><a href="BaiTap7.html"><i class="fa-solid fa-table-columns"></i>Bài tập 7<small>Bố cục trang</small></a></li>
+  <li><a href="BaiTap8a.html"><i class="fa-solid fa-user-ninja"></i>Bài tập 8a<small>Heroes of JavaScript</small></a></li>
+  <li><a href="BaiTap8b.html"><i class="fa-solid fa-mask"></i>Bài tập 8b<small>The Bat family</small></a></li>
+  <li><a href="BaiTap9.html"><i class="fa-solid fa-icons"></i>Bài tập 9<small>Font Awesome</small></a></li>
+ </ul>
+ <footer>&copy; 2026 &ndash; Phát triển ứng dụng WEB/TMĐT</footer>
+</div>
+</body></html>
