@@ -1,50 +1,206 @@
-<!doctype html>
-<html lang="vi"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nguyễn Phúc Thảo Nguyên - Bài tập CSS</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-:root{--bg:#f4f6f8;--card:#fff;--text:#222;--muted:#666;--accent:#00676b;}
-@media (prefers-color-scheme:dark){:root{--bg:#15181b;--card:#1f2328;--text:#eee;--muted:#aaa;--accent:#4fd1c5;}}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text);}
-.wrap{max-width:720px;margin:0 auto;padding:30px 16px;}
-.profile{background:var(--card);border-radius:14px;padding:28px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.1);}
-.profile h1{margin:0 0 4px;font-size:26px;}
-.profile p{margin:4px 0;color:var(--muted);}
-.social{margin-top:14px;}
-.social a{font-size:28px;margin:0 8px;color:var(--accent);transition:transform .2s;display:inline-block;}
-.social a:hover{transform:scale(1.2);}
-h2{margin:30px 0 12px;font-size:20px;}
-.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
-.list a{display:block;background:var(--card);color:var(--text);text-decoration:none;padding:14px 16px;border-radius:10px;
-  box-shadow:0 1px 4px rgba(0,0,0,.1);border-left:4px solid var(--accent);transition:transform .2s;}
-.list a:hover{transform:translateY(-3px);}
-.list i{color:var(--accent);margin-right:8px;}
-.list small{display:block;color:var(--muted);margin-top:4px;}
-footer{text-align:center;color:var(--muted);margin-top:30px;font-size:13px;}
-</style></head><body>
-<div class="wrap">
- <section class="profile">
-  <h1>Nguyễn Phúc Thảo Nguyên</h1>
-  <p>MSSV: 31221023069</p>
-  <p>Đại học Kinh tế TP.HCM (UEH) &ndash; Khoa CNTTKD</p>
-  <div class="social">
-   <a href="https://github.com/tn063167-lab/Tuan3-Venha" title="GitHub"><i class="fa-brands fa-github"></i></a>
-  </div>
- </section>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Labs – Portfolio thực hành | Phát triển ứng dụng TMĐT</title>
+    <meta name="description" content="Portfolio tổng hợp 03 bài thực hành JavaScript: Language Foundations, DOM and Events, jQuery.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b6e6e'/%3E%3Ctext x='50' y='68' font-size='54' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23f07f2e'%3EJS%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
- <h2><i class="fa-solid fa-folder-open"></i> Bài tập CSS</h2>
- <ul class="list">
-  <li><a href="BaiTap2.html"><i class="fa-solid fa-font"></i>Bài tập 2<small>Định dạng văn bản</small></a></li>
-  <li><a href="BaiTap4.html"><i class="fa-solid fa-bars"></i>Bài tập 4<small>Menu inline-block</small></a></li>
-  <li><a href="BaiTap5.html"><i class="fa-solid fa-server"></i>Bài tập 5<small>Landing page hosting</small></a></li>
-  <li><a href="BaiTap6.html"><i class="fa-solid fa-images"></i>Bài tập 6<small>Portfolio</small></a></li>
-  <li><a href="BaiTap7.html"><i class="fa-solid fa-table-columns"></i>Bài tập 7<small>Bố cục trang</small></a></li>
-  <li><a href="BaiTap8a.html"><i class="fa-solid fa-user-ninja"></i>Bài tập 8a<small>Heroes of JavaScript</small></a></li>
-  <li><a href="BaiTap8b.html"><i class="fa-solid fa-mask"></i>Bài tập 8b<small>The Bat family</small></a></li>
-  <li><a href="BaiTap9.html"><i class="fa-solid fa-icons"></i>Bài tập 9<small>Font Awesome</small></a></li>
- </ul>
- <footer>&copy; 2026 &ndash; Phát triển ứng dụng WEB/TMĐT</footer>
-</div>
-</body></html>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>JS</b> JavaScript-Labs</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#gioi-thieu">Giới thiệu</a></li>
+      <li><a href="#labs">Các bài Lab</a></li>
+      <li><a href="#kien-thuc">Kiến thức</a></li>
+      <li><a href="#tmdt">Ứng dụng TMĐT</a></li>
+      <li><a href="#tu-danh-gia">Tự đánh giá</a></li>
+    </ul>
+    <div>
+      <button class="icon-btn" id="themeBtn" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện sáng/tối">&#9681;</button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Mở menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ===================== HERO + THÔNG TIN CÁ NHÂN ===================== -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Chương 4 · JavaScript</p>
+      <h1>Hành trình học JavaScript cho ứng dụng thương mại điện tử</h1>
+      <p class="lead">Tổng hợp 3 bài thực hành &ndash; Language Foundations, DOM and Events và jQuery &ndash;
+         cùng những gì tôi đã học và cách áp dụng vào website bán hàng.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#labs">Xem các bài Lab</a>
+        <a class="btn btn-ghost" href="#kien-thuc">Kiến thức đã học</a>
+      </div>
+    </div>
+
+    <aside class="profile-card" aria-label="Thông tin sinh viên">
+      <img class="avatar" data-profile="avatar" src="assets/avatar.png" alt="Ảnh đại diện sinh viên">
+      <h2 data-profile="fullName">Nguyễn Phúc Thảo Nguyên</h2>
+      <p style="margin:0;color:#d8f0ef">Sinh viên UEH &middot; Phát triển ứng dụng TMĐT</p>
+      <dl>
+        <dt>Mã số sinh viên</dt><dd data-profile="studentId">31221023969</dd>
+        <dt>Lớp học phần</dt><dd data-profile="className">26C1INF50902701</dd>
+        <dt>GitHub</dt><dd><a data-profile="github" href="https://github.com/" target="_blank" rel="noopener">github.com/tn063167-lab</a></dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="stats" aria-label="Thống kê nhanh">
+  <div class="wrap">
+    <div class="stat"><b data-count="3">0</b><span>bài Lab</span></div>
+    <div class="stat"><b data-count="30">0</b><span>Exercise đã thực hiện</span></div>
+    <div class="stat"><b data-count="3">0</b><span>chủ đề: JavaScript &middot; DOM &middot; jQuery</span></div>
+  </div>
+</section>
+
+<!-- ===================== GIỚI THIỆU ===================== -->
+<section class="block" id="gioi-thieu">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Giới thiệu</p><h2>Về bài thực hành này</h2></div>
+    <div class="card intro">
+      <p>Ba bài Lab này giúp tôi đi từ những dòng JavaScript đầu tiên đến việc làm cho trang web phản hồi theo thao tác của người dùng:
+      Lab 08 xây nền tảng ngôn ngữ, Lab 09 điều khiển nội dung trang thông qua DOM và sự kiện, còn Lab 10 dùng jQuery để viết ngắn gọn hơn,
+      tạo hiệu ứng và lấy dữ liệu từ web service.</p>
+      <p>JavaScript là ngôn ngữ chạy ngay trong trình duyệt nên nó chịu trách nhiệm cho hầu hết tương tác trên website hiện đại:
+      kiểm tra form trước khi gửi, cập nhật giỏ hàng tức thì, hiển thị hình ảnh sản phẩm, hay tải thêm dữ liệu mà không phải tải lại trang.
+      Với thương mại điện tử, những khả năng đó ảnh hưởng trực tiếp đến trải nghiệm mua hàng.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DANH SÁCH LAB ===================== -->
+<section class="block" id="labs">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Sản phẩm thực hành</p><h2>Danh sách và liên kết đến các bài Lab</h2></div>
+    <div class="lab-grid">
+      <article class="card lab-card">
+        <span class="num">08</span>
+        <h3>Lab 08<br>JavaScript 1: Language Foundations</h3>
+        <p>Cú pháp, biến, hàm, String / Date / Array / Object, Browser Console.</p>
+        <div class="chips"><span class="chip">12 Exercise</span><span class="chip">Functions</span><span class="chip">Objects</span></div>
+        <a class="btn btn-primary" href="Lab08/index.html">Vào Lab 08 &rarr;</a>
+      </article>
+      <article class="card lab-card">
+        <span class="num">09</span>
+        <h3>Lab 09<br>JavaScript 2: DOM and Events</h3>
+        <p>Chọn và thay đổi phần tử, tạo/xoá node, sự kiện chuột, làm việc với form và kiểm tra dữ liệu.</p>
+        <div class="chips"><span class="chip">8 Exercise</span><span class="chip">DOM</span><span class="chip">Events</span><span class="chip">Forms</span></div>
+        <a class="btn btn-primary" href="Lab09/index.html">Vào Lab 09 &rarr;</a>
+      </article>
+      <article class="card lab-card">
+        <span class="num">10</span>
+        <h3>Lab 10<br>JavaScript 3: jQuery</h3>
+        <p>Selectors, sự kiện, thao tác DOM, animation và GET request với jqXHR.</p>
+        <div class="chips"><span class="chip">10 Exercise</span><span class="chip">jQuery</span><span class="chip">Animation</span><span class="chip">AJAX</span></div>
+        <a class="btn btn-primary" href="Lab10/index.html">Vào Lab 10 &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KIẾN THỨC ĐÃ HỌC ===================== -->
+<section class="block" id="kien-thuc">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Tổng kết kiến thức</p><h2>Những kiến thức và kỹ năng đã học được</h2></div>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-target="k08">Lab 08 &middot; Language</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="k09">Lab 09 &middot; DOM &amp; Events</button>
+      <button class="tab" role="tab" aria-selected="false" data-target="k10">Lab 10 &middot; jQuery</button>
+    </div>
+    <div class="card">
+      <div class="tab-panel active" id="k08">
+        <ul>
+          <li>Biết hai cách đưa JavaScript vào trang: viết trực tiếp trong HTML (embedded) và nạp file <code>.js</code> riêng; dùng <code>&lt;noscript&gt;</code> khi trình duyệt tắt JS.</li>
+          <li>Phân biệt biến cục bộ và toàn cục (<code>var</code>), hiểu vì sao <code>==</code> và <code>===</code> cho kết quả khác nhau khi so sánh chuỗi.</li>
+          <li>Viết hàm có tham số, giá trị trả về, hàm lồng nhau và hàm ẩn danh được truyền như một giá trị.</li>
+          <li>Tạo đối tượng bằng object literal và constructor function; lưu nhiều đối tượng trong mảng và duyệt bằng <code>for..in</code>.</li>
+          <li>Dùng Console (<code>console.log</code>, <code>warn</code>, <code>error</code>) để tìm lỗi thay vì đoán mò.</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="k09">
+        <ul>
+          <li>Chọn phần tử bằng <code>getElementById</code>, <code>querySelector(All)</code>, rồi đọc/sửa nội dung, thuộc tính và style của nó.</li>
+          <li>Hiểu cây DOM gồm nhiều loại node (element, text) nên <code>firstChild</code> có thể là khoảng trắng chứ không phải thẻ.</li>
+          <li>Tạo phần tử mới với <code>createElement</code>, chèn bằng <code>appendChild</code>, xoá bằng <code>removeChild</code>.</li>
+          <li>Gắn sự kiện bằng <code>addEventListener</code> (click, mouseover, mouseout, focus, blur, submit, load) và dùng đối tượng <code>event</code>.</li>
+          <li>Kiểm tra dữ liệu form, chặn gửi bằng <code>preventDefault()</code> và hiện thông báo lỗi ngay trên trang; dùng breakpoint để gỡ lỗi.</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="k10">
+        <ul>
+          <li>Nạp jQuery từ CDN kèm bản dự phòng trong repository để trang vẫn chạy khi mạng có vấn đề.</li>
+          <li>Dùng selector kiểu CSS (<code>#id</code>, <code>.class</code>, <code>:password</code>, <code>:contains()</code>) và thấy một lệnh áp dụng được cho cả tập phần tử.</li>
+          <li>Xử lý sự kiện bằng <code>on()</code>, nối chuỗi nhiều handler, gỡ handler bằng <code>off()</code>, và chờ DOM sẵn sàng với <code>$(function(){})</code>.</li>
+          <li>Chèn phần tử bằng <code>after</code>, <code>append</code>, <code>prependTo</code>...; tạo hiệu ứng <code>fade</code>, <code>slide</code> và <code>animate</code>.</li>
+          <li>Gọi <code>$.get()</code> lấy dữ liệu JSON, xử lý kết quả bằng <code>done</code>, <code>fail</code>, <code>always</code> của jqXHR.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ỨNG DỤNG TMĐT ===================== -->
+<section class="block" id="tmdt">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Liên hệ thực tế</p><h2>Vận dụng vào ứng dụng thương mại điện tử</h2>
+      <p class="hint">Hai demo nhỏ dưới đây dùng đúng các kỹ thuật của Lab: thao tác DOM, sự kiện và kiểm tra dữ liệu.</p></div>
+    <div class="shop">
+      <div class="card">
+        <h3>Giỏ hàng mini</h3>
+        <div id="cartItems" aria-live="polite"></div>
+        <div class="summary">
+          <div><span>Tạm tính</span><span id="sumSub">0 ₫</span></div>
+          <div><span>VAT 8%</span><span id="sumVat">0 ₫</span></div>
+          <div class="grand"><span>Tổng cộng</span><span id="sumAll">0 ₫</span></div>
+        </div>
+        <p class="hint">Tương tự Exercise 8.9 (tính tổng + thuế) và Lab 09 (sự kiện click cập nhật DOM).</p>
+      </div>
+      <div class="card">
+        <h3>Form đăng ký tài khoản</h3>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="dName">Họ và tên</label><input id="dName" type="text" autocomplete="name"><span class="msg"></span></div>
+          <div class="field"><label for="dEmail">Email</label><input id="dEmail" type="text" autocomplete="email"><span class="msg"></span></div>
+          <div class="field"><label for="dPhone">Số điện thoại</label><input id="dPhone" type="text" autocomplete="tel"><span class="msg"></span></div>
+          <div class="field"><label for="dPass">Mật khẩu</label><input id="dPass" type="password" autocomplete="new-password"><span class="msg"></span></div>
+          <button class="btn btn-primary" type="submit">Đăng ký</button>
+          <div class="form-ok" id="formResult" role="status"></div>
+        </form>
+        <p class="hint">Giống Exercise 9.7 &ndash; 9.8: đổi màu khi focus, kiểm tra khi rời ô, <code>preventDefault()</code> khi dữ liệu sai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TỰ ĐÁNH GIÁ ===================== -->
+<section class="block" id="tu-danh-gia">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Nhìn lại</p><h2>Tự đánh giá sau khi hoàn thành</h2></div>
+    <div class="card reflect">
+      <p id="reflectText">Qua ba bài Lab, tôi hiểu rõ hơn cách JavaScript biến một trang HTML tĩnh thành giao diện tương tác: từ biến, hàm, đối tượng ở Lab 08, đến thao tác DOM và sự kiện ở Lab 09, rồi viết gọn hơn nhờ jQuery ở Lab 10. Lab 09 hữu ích nhất vì phần kiểm tra biểu mẫu rất gần với form đăng ký của một website bán hàng; Lab 10 khó nhất ở phần GET request vì dữ liệu trả về bất đồng bộ, không có ngay. Tôi có thể áp dụng để kiểm tra dữ liệu đăng ký, tính tổng giỏ hàng, xem nhanh ảnh sản phẩm và tải danh sách sản phẩm mà không cần tải lại trang. Tôi cần luyện thêm về xử lý lỗi, JavaScript hiện đại (ES6, fetch) và gỡ lỗi bằng DevTools.</p>
+      <div class="wc" id="wordCount"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Phát triển ứng dụng TMĐT &middot; Trường Đại học Kinh tế TP.HCM (UEH) &middot;
+    <a data-profile="github" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+<button class="to-top" id="toTop" aria-label="Lên đầu trang">&uarr;</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
