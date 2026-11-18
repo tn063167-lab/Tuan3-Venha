@@ -1,0 +1,146 @@
+[
+ {
+  "id": 1,
+  "name": "Calgary",
+  "countryCodeISO": "CA",
+  "latitude": 51.0447,
+  "longitude": -114.0719,
+  "population": 1239220
+ },
+ {
+  "id": 2,
+  "name": "Montreal",
+  "countryCodeISO": "CA",
+  "latitude": 45.5017,
+  "longitude": -73.5673,
+  "population": 1704694
+ },
+ {
+  "id": 3,
+  "name": "Toronto",
+  "countryCodeISO": "CA",
+  "latitude": 43.6532,
+  "longitude": -79.3832,
+  "population": 2731571
+ },
+ {
+  "id": 4,
+  "name": "Vancouver",
+  "countryCodeISO": "CA",
+  "latitude": 49.2827,
+  "longitude": -123.1207,
+  "population": 631486
+ },
+ {
+  "id": 5,
+  "name": "Halifax",
+  "countryCodeISO": "CA",
+  "latitude": 44.6488,
+  "longitude": -63.5752,
+  "population": 403131
+ },
+ {
+  "id": 6,
+  "name": "Edinburgh",
+  "countryCodeISO": "GB",
+  "latitude": 55.9533,
+  "longitude": -3.1883,
+  "population": 488050
+ },
+ {
+  "id": 7,
+  "name": "London",
+  "countryCodeISO": "GB",
+  "latitude": 51.5074,
+  "longitude": -0.1278,
+  "population": 8982000
+ },
+ {
+  "id": 8,
+  "name": "Paris",
+  "countryCodeISO": "FR",
+  "latitude": 48.8566,
+  "longitude": 2.3522,
+  "population": 2161000
+ },
+ {
+  "id": 9,
+  "name": "Berlin",
+  "countryCodeISO": "DE",
+  "latitude": 52.52,
+  "longitude": 13.405,
+  "population": 3645000
+ },
+ {
+  "id": 10,
+  "name": "Rome",
+  "countryCodeISO": "IT",
+  "latitude": 41.9028,
+  "longitude": 12.4964,
+  "population": 2873000
+ },
+ {
+  "id": 11,
+  "name": "Florence",
+  "countryCodeISO": "IT",
+  "latitude": 43.7696,
+  "longitude": 11.2558,
+  "population": 382258
+ },
+ {
+  "id": 12,
+  "name": "Athens",
+  "countryCodeISO": "GR",
+  "latitude": 37.9838,
+  "longitude": 23.7275,
+  "population": 664046
+ },
+ {
+  "id": 13,
+  "name": "Madrid",
+  "countryCodeISO": "ES",
+  "latitude": 40.4168,
+  "longitude": -3.7038,
+  "population": 3223000
+ },
+ {
+  "id": 14,
+  "name": "Budapest",
+  "countryCodeISO": "HU",
+  "latitude": 47.4979,
+  "longitude": 19.0402,
+  "population": 1752000
+ },
+ {
+  "id": 15,
+  "name": "Accra",
+  "countryCodeISO": "GH",
+  "latitude": 5.6037,
+  "longitude": -0.187,
+  "population": 2291352
+ },
+ {
+  "id": 16,
+  "name": "Nassau",
+  "countryCodeISO": "BS",
+  "latitude": 25.0443,
+  "longitude": -77.3504,
+  "population": 274400
+ },
+ {
+  "id": 17,
+  "name": "New York",
+  "countryCodeISO": "US",
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "population": 8336817
+ },
+ {
+  "id": 18,
+  "name": "Chicago",
+  "countryCodeISO": "US",
+  "latitude": 41.8781,
+  "longitude": -87.6298,
+  "population": 2693976
+ }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise 8.12 – Travel posts</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <script type="text/javascript" src="../assets/js/travel-data.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="../../css/lab-nav.css">
+</head>
+<body>
+
+<div class="container">  <!-- start main content container -->
+   <div class="row">  <!-- start main content row -->
+      <div class="col-md-3">  <!-- start left navigation rail column -->
+
+         <div class="panel panel-info">
+           <div class="panel-heading">Continents</div>
+           <ul class="list-group">
+              <script>document.write(outputContinents());</script>
+           </ul>
+         </div>  <!-- end continents panel -->
+         <div class="panel panel-info">
+           <div class="panel-heading">Popular Countries</div>
+           <ul class="list-group">
+              <script>document.write(outputCountries("Canada"));</script>
+           </ul>
+         </div>  <!-- end countries panel -->
+      </div>  <!-- end left navigation rail -->
+
+      <div class="col-md-9">  <!-- start main content column -->
+         <ol class="breadcrumb">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">Browse</a></li>
+           <li class="active">Posts</li>
+         </ol>
+
+         <div class="jumbotron" id="postJumbo">
+           <h1>Posts</h1>
+           <p>Read other travellers' posts ... or create your own.</p>
+           <p><a class="btn btn-warning btn-lg">Learn more &raquo;</a></p>
+         </div>
+
+         <!-- start post summaries -->
+         <div class="postlist">
+           <script>document.write(outputPosts());</script>
+         </div>
+
+      <ul class="pagination">
+        <script>document.write(outputPagination(4, 9));</script>
+      </ul>
+
+      </div>  <!-- end main content column -->
+   </div>  <!-- end main content row -->
+</div>   <!-- end main content container -->
+
+<nav class="lab-nav" aria-label="Điều hướng bài thực hành">
+    <a href="../../index.html">&#127968; Trang chủ</a>
+    <a href="../index.html">&larr; Lab 08</a>
+    <span>Exercise 8.12</span>
+</nav>
+
+</body>
+</html>

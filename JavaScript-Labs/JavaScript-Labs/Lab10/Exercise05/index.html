@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 10</title>
+    <link rel="stylesheet" href="../assets/css/lab10.css">
+    <style>
+      #tools { margin: 10px 8px; font-family: Arial, sans-serif; }
+      #tools select, #tools button { font-size: 14px; padding: 4px 8px; }
+      #log { margin-left: 8px; color: #0b6e6e; font-family: Arial, sans-serif; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Dự phòng: nếu CDN không tải được thì nạp bản jQuery lưu trong repository -->
+    <script type="text/javascript">
+    window.jQuery ||
+       document.write('<script src="../assets/js/jquery-3.1.1.min.js"><\/script>');
+    </script>
+    <link rel="stylesheet" href="../../css/lab-nav.css">
+</head>
+<body>
+
+<div id="tools">
+    <label for="method">Phương thức chèn:</label>
+    <select id="method">
+        <option>after</option><option>before</option><option>append</option><option>prepend</option>
+        <option>appendTo</option><option>prependTo</option><option>insertBefore</option>
+    </select>
+    <button id="btnInsert">Insert image</button>
+    <button id="btnReset">Reset</button>
+</div>
+<div id="log"></div>
+<div class="panel">
+    <p>existing content</p>
+</div>
+
+<nav class="lab-nav" aria-label="Điều hướng bài thực hành">
+    <a href="../../index.html">&#127968; Trang chủ</a>
+    <a href="../index.html">&larr; Lab 10</a>
+    <span>Exercise 10.5</span>
+</nav>
+<script type="text/javascript" language="javascript" src="script.js"></script>
+</body>
+</html>
