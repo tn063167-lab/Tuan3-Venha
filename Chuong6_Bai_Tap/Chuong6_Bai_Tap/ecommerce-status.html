@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cà Phê Việt - Đơn hàng</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-md-3">
+      <h3>Quản lý đơn hàng</h3>
+      <ul class="list-group">
+        <li class="list-group-item">Tất cả đơn hàng</li>
+        <li class="list-group-item">Quản lý phản hồi</li>
+        <li class="list-group-item">Mã giảm giá của tôi</li>
+        <li class="list-group-item">Địa chỉ giao hàng</li>
+      </ul>
+    </div>
+    <div class="col-sm-8 col-md-9">
+      <h3>Trạng thái đơn hàng</h3>
+      <div id="orders"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script>
+  renderNav('ecommerce-status.html');
+  var st = {
+    track:     '<button class="btn btn-sm btn-default">Theo dõi</button>',
+    completed: '<button class="btn btn-sm btn-success">Hoàn thành</button>',
+    cancelled: '<button class="btn btn-sm btn-danger">Đã hủy</button>'
+  };
+  var orders = [[0, 1, 'track', 1], [1, 2, 'completed', 1], [2, 1, 'cancelled', 0], [3, 3, 'track', 1], [4, 1, 'completed', 1], [5, 1, 'track', 1]];
+  orders.forEach(function (o) {
+    var p = products[o[0]];
+    $('#orders').append(
+      '<div class="thumbnail"><div class="row" style="padding:6px 15px">' +
+      '<div class="col-sm-1 col-xs-3"><img class="img-responsive" src="' + art(p.kind, p.c, p.lines) + '" alt=""></div>' +
+      '<div class="col-sm-4 col-xs-9"><a href="ecommerce-detail.html?id=' + p.id + '">' + p.name + '</a></div>' +
+      '<div class="col-sm-1 col-xs-3">' + o[1] + '</div>' +
+      '<div class="col-sm-2 col-xs-5">' + fmt(p.price * o[1]) + '</div>' +
+      '<div class="col-sm-2 col-xs-4">' + st[o[2]] + '</div>' +
+      '<div class="col-sm-2 col-xs-12"><a href="#">' + o[3] + ' tin nhắn</a></div>' +
+      '</div></div>');
+  });
+</script>
+</body>
+</html>

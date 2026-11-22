@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cà Phê Việt - Chi tiết sản phẩm</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-star-rating@4.1.2/css/star-rating.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.min.css">
+<link rel="stylesheet" href="https://unpkg.com/xzoom/dist/xzoom.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="nav"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-md-3" id="cats"></div>
+
+    <div class="col-sm-8 col-md-9">
+      <div class="thumbnail">
+        <div class="row" style="padding:15px">
+          <!-- Hình lớn + hình nhỏ (xZoom) -->
+          <div class="col-sm-6 detail-img">
+            <span class="badge-discount" id="d-discount" style="left:27px"></span>
+            <span class="badge-tag" id="d-tag" style="right:27px"></span>
+            <div class="xzoom-container">
+              <img class="xzoom" id="main" style="width:100%">
+              <div class="xzoom-thumbs" id="gallery"></div>
+            </div>
+          </div>
+
+          <!-- Mô tả + form -->
+          <div class="col-sm-6">
+            <h4 class="pull-right price" id="d-price"></h4>
+            <h4><a href="#" id="d-name"></a></h4>
+            <p>Cà phê nguyên chất, rang xay theo đơn, đóng gói hút chân không giữ trọn hương vị. Phù hợp pha phin, pha máy và cold brew. Giao hàng toàn quốc, đổi trả trong 7 ngày nếu sản phẩm lỗi.</p>
+            <div class="stock-row" style="margin-bottom:12px"><div class="progress stock" style="height:24px;border-radius:12px"><div id="d-bar"></div></div><span class="cd" id="d-cd"></span></div>
+            <form role="form" onsubmit="return false">
+              <div class="number form-group"><label>Số lượng</label> <input type="number" class="input-sm" id="number" value="1" min="1"></div>
+              <div class="form-group"><label>Loại xay</label>
+                <select id="color"><option>Nguyên hạt</option><option>Xay phin</option><option>Xay máy espresso</option><option>Xay cold brew</option></select></div>
+              <div class="form-group"><label>Khối lượng</label>
+                <div class="btn-group" id="size">
+                  <button type="button" class="btn btn-default">250g</button><button type="button" class="btn btn-default active">500g</button><button type="button" class="btn btn-default">1kg</button>
+                </div></div>
+              <div class="form-group">
+                <button type="button" class="btn btn-default">Liên hệ người bán</button>
+                <button type="button" class="btn btn-success" id="add">Thêm vào giỏ</button></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Mô tả + đánh giá -->
+        <div class="caption-full" style="padding:0 15px 15px">
+          <div class="description"><p>Hạt cà phê được tuyển chọn từ vùng nguyên liệu Tây Nguyên, rang mộc không phụ gia, hậu vị ngọt sâu và đắng dịu. Thích hợp cho cả người mới bắt đầu và người sành cà phê.</p></div>
+          <div class="ratings">
+            <p class="pull-right" id="d-rev"></p>
+            <p><input class="rating" id="d-rate" readonly> <span id="d-stars"></span></p>
+          </div>
+          <div class="well"><div class="text-right"><a class="btn btn-success">Viết đánh giá</a></div></div>
+
+          <!-- Bình luận -->
+          <div id="comments"></div>
+        </div>
+      </div>
+
+      <h4>Sản phẩm khác bạn có thể thích</h4>
+      <div class="row" id="others"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-star-rating@4.1.2/js/star-rating.min.js"></script>
+<script src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
+<script src="app.js"></script>
+<script>
+  renderNav('');
+  renderCats('Danh mục');
+
+  var id = +(new URLSearchParams(location.search).get('id')) || 0;
+  var p = products[id] || products[0];
+
+  $('#d-name').text(p.name);
+  $('#d-price').html(fmt(p.price) + ' <small style="color:#999;text-decoration:line-through;font-weight:normal">' + fmt(p.old) + '</small>');
+  $('#d-discount').text('-' + p.discount + '%');
+  if (p.tag) { $('#d-tag').addClass(p.tag).text(p.tag === 'new' ? 'New' : 'Best Seller'); }
+  var hot = p.sold / p.total >= 0.8;
+  $('#d-bar').addClass('progress-bar ' + (hot ? 'progress-bar-danger' : 'progress-bar-warning'))
+    .css('width', Math.max(p.sold, 28) + '%').text(hot ? '🔥 Sắp bán hết (đã bán ' + p.sold + '/' + p.total + ')' : 'Đã bán ' + p.sold);
+  $('#d-cd').addClass('cd').attr('data-end', p.end).data('end', p.end);
+  $('#d-rate').val(p.rate); $('#d-rev').text(p.rev + ' đánh giá'); $('#d-stars').text(p.rate.toFixed(1) + ' sao');
+
+  // Ảnh lớn + ảnh nhỏ cho xZoom
+  var pics = [art(p.kind, p.c, p.lines), art('beans', p.c, ['Chat luong cao']), art('cup', p.c, ['Thom ngon moi ngay'])];
+  $('#main').attr({ src: pics[0], xoriginal: pics[0] });
+  pics.forEach(function (src) {
+    $('#gallery').append('<a href="' + src + '"><img class="xzoom-gallery" width="80" src="' + src + '" xpreview="' + src + '"></a>');
+  });
+
+  // Bình luận
+  var cm = [['Nguyễn Văn An', '1 ngày trước', 'TP. Hồ Chí Minh', 'Cà phê thơm, đậm vị, pha phin rất ngon. Sẽ mua lại!', 5],
+            ['Trần Thị Bình', '2 ngày trước', 'Hà Nội', 'Đóng gói cẩn thận, giao nhanh hơn dự kiến.', 4],
+            ['Lê Minh Châu', '5 ngày trước', 'Đà Nẵng', 'Chất lượng tốt so với giá tiền, đáng để thử.', 4]];
+  cm.forEach(function (c) {
+    $('#comments').append('<div class="row comment"><div class="col-md-12"><div class="ratings"><input class="rating" value="' + c[4] + '" readonly> ' + c[0] +
+      '<span class="pull-right">' + c[1] + '</span></div><p>Từ <em>' + c[2] + '</em></p><p>' + c[3] + '</p></div></div>');
+  });
+
+  // Sản phẩm khác
+  products.filter(function (x) { return x.id !== p.id; }).slice(0, 3).forEach(function (x) { $('#others').append(cardHtml(x, 'col-sm-6 col-md-4')); });
+
+  $('#size .btn').click(function () { $('#size .btn').removeClass('active'); $(this).addClass('active'); });
+  $('#add').click(function () { addToCart(+$('#number').val() || 1); });
+
+  initStars('xs');
+  $('#d-rate').rating('refresh', { size: 'sm' });
+  initCommon();
+  $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 420, title: false, tint: '#333', Xoffset: 15 });
+</script>
+</body>
+</html>
