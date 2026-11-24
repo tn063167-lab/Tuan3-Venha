@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.11 – Three-Column Layout</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise11.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise10.html">← Exercise 7.10</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise12.html">Exercise 7.12 →</a></div>
+<div class="page">
+<h1>Exercise 7.11 – Three-Column Layout</h1>
+<p class="lead">Xây dựng bố cục ba cột bằng positioning.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Cột trái và cột phải dùng <code>position:absolute</code> (bám theo khung <code>relative</code>), mỗi cột rộng 20%.</li><li>Cột giữa nằm trong document flow với <code>margin: 0 21%</code> để chừa chỗ cho hai cột bên.</li><li>Khung ngoài cao theo cột giữa vì cột absolute không góp phần vào chiều cao.</li></ul></div>
+<div class="stage"><div class="wrap3">
+  <div class="left3"><h3>Cột trái</h3><p>Menu</p></div>
+  <div class="center3"><h3>Cột giữa</h3><p>Float là thuộc tính CSS dùng để đẩy một phần tử sang bên trái hoặc bên phải khung chứa, để nội dung còn lại chảy bao quanh nó. Ban đầu float chỉ được dùng để cho chữ bao quanh hình ảnh, nhưng sau đó được dùng rộng rãi để dựng bố cục nhiều cột cho cả trang web. Vì phần tử float bị đưa ra khỏi document flow, khung chứa có thể co lại và các phần tử phía sau có thể bị chồng lên nếu không xử lý bằng clear.</p><p>Khi quan sát kết quả, hãy thử thay đổi kích thước cửa sổ trình duyệt để thấy chữ tự động xuống dòng và chảy quanh hình ảnh. Đây là cách trình duyệt tính toán lại vị trí của từng dòng chữ dựa trên chỗ còn trống bên cạnh phần tử float.</p></div>
+  <div class="right3"><h3>Cột phải</h3><p>Quảng cáo</p></div>
+</div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise11.css</h3><pre>.wrap3{position:relative;border:2px solid #0f6b6b;background:#fff}
+.left3{position:absolute;top:0;left:0;width:20%;background:#cfe8e8;padding:12px}
+.right3{position:absolute;top:0;right:0;width:20%;background:#ffe3cc;padding:12px}
+.center3{margin:0 21%;padding:12px;background:#f4f6fb}
+.left3 h3,.right3 h3,.center3 h3{margin-top:0}</pre></details>
+</div>
+<script src="js/width.js"></script>
+</body>
+</html>

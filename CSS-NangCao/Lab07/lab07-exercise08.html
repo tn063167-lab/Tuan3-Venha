@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.8 – Floating and Clearing</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise08.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise07.html">← Exercise 7.7</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise09.html">Exercise 7.9 →</a></div>
+<div class="page">
+<h1>Exercise 7.8 – Floating and Clearing</h1>
+<p class="lead">Sử dụng clear để xử lý bố cục sau các phần tử float.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Nhóm A: footer không clear nên bị kéo lên cạnh các cột float, chữ chảy quanh chúng.</li><li>Nhóm B: footer có <code>clear:both</code> nên xuống dưới cả hai cột như mong muốn.</li></ul></div>
+<div class="stage"><h2>A. Footer KHÔNG dùng clear</h2>
+  <div class="header">Header</div>
+  <div class="col-l">Cột trái (float:left)</div><div class="col-r">Cột phải (float:right)</div>
+  <div class="footer">Footer: chữ của footer chảy lên cạnh các cột float vì chưa clear nên bố cục bị lệch.</div>
+  <div style="clear:both"></div></div>
+<div class="stage"><h2>B. Footer dùng <code>clear:both</code></h2>
+  <div class="header">Header</div>
+  <div class="col-l">Cột trái (float:left)</div><div class="col-r">Cột phải (float:right)</div>
+  <div class="footer clr">Footer đã dùng clear:both nên nằm gọn dưới hai cột.</div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise08.css</h3><pre>.header{background:#0f6b6b;color:#fff;padding:12px;font-weight:700}
+.col-l{float:left;width:30%;height:120px;background:#cfe8e8;padding:10px}
+.col-r{float:right;width:65%;height:120px;background:#ffe3cc;padding:10px}
+.footer{background:#2b3a67;color:#fff;padding:12px}
+.clr{clear:both}</pre></details>
+</div>
+
+</body>
+</html>

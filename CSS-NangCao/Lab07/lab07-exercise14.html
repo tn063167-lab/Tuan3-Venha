@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.14 – Transforms</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise14.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise12.html">← Exercise 7.12</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise15.html">Exercise 7.15 →</a></div>
+<div class="page">
+<h1>Exercise 7.14 – Transforms</h1>
+<p class="lead">Thực hành rotate, skew, translate và scale.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Khung nét đứt là vị trí ban đầu của phần tử; hộp màu là kết quả sau khi áp dụng <code>transform</code>.</li><li>Có thể kết hợp nhiều hàm trong một khai báo, ví dụ <code>translate() rotate() scale()</code>.</li><li>Dòng cuối minh họa <code>transform-origin</code> làm thay đổi tâm xoay.</li></ul></div>
+<div class="stage"><h2>Các phép biến đổi cơ bản</h2><div class="row14">
+  <div class="cell"><div class="tbox rot">rotate(20deg)</div></div>
+  <div class="cell"><div class="tbox skw">skew(20deg, 8deg)</div></div>
+  <div class="cell"><div class="tbox trn">translate(30px, 20px)</div></div>
+  <div class="cell"><div class="tbox scl">scale(1.4)</div></div>
+  <div class="cell"><div class="tbox cmb">translate + rotate + scale</div></div></div></div>
+<div class="stage"><h2><code>transform-origin</code></h2><div class="row14">
+  <div class="cell"><div class="tbox o1">origin: center</div></div>
+  <div class="cell"><div class="tbox o2">origin: top left</div></div>
+  <div class="cell"><div class="tbox o3">origin: bottom right</div></div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise14.css</h3><pre>.row14{display:flex;flex-wrap:wrap;gap:36px;padding:24px 20px}
+.cell{width:140px;height:100px;border:1px dashed #888;position:relative}
+.tbox{width:100%;height:100%;background:#0f6b6b;color:#fff;font-weight:700;padding:8px;font-size:14px;opacity:.9}
+.rot{transform:rotate(20deg)}
+.skw{background:#e8742c;transform:skew(20deg,8deg)}
+.trn{background:#2b3a67;transform:translate(30px,20px)}
+.scl{background:#7a3e9d;transform:scale(1.4)}
+.cmb{background:#c0392b;transform:translate(15px,0) rotate(15deg) scale(1.15)}
+.o1{transform:rotate(25deg)}
+.o2{transform:rotate(25deg);transform-origin:top left;background:#e8742c}
+.o3{transform:rotate(25deg);transform-origin:bottom right;background:#2b3a67}</pre></details>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.9 – Using Positioning</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise09.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise08.html">← Exercise 7.8</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise10.html">Exercise 7.10 →</a></div>
+<div class="page">
+<h1>Exercise 7.9 – Using Positioning</h1>
+<p class="lead">Kết hợp relative và absolute để đặt caption/ảnh chồng lên nhau.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Ảnh 1: khung <code>position:relative</code>, caption và nhãn <code>position:absolute</code> chồng lên ảnh.</li><li>Ảnh 2: caption dùng <code>position:relative; top:-46px</code> để kéo chồng lên ảnh, nhưng chỗ cũ của nó vẫn được giữ lại phía dưới.</li></ul></div>
+<div class="stage"><h2>Caption và nhãn bằng absolute trong khung relative / caption bằng relative</h2>
+  <figure class="photo"><img src="images/scene2.jpg" alt="Ảnh biển"><span class="tag9">MỚI</span>
+    <figcaption class="cap-abs">Caption đặt bằng absolute (bottom:0)</figcaption></figure>
+  <figure class="photo p2"><img src="images/scene1.jpg" alt="Ảnh hoàng hôn">
+    <figcaption class="cap-rel">Caption đặt bằng relative (top:-46px)</figcaption></figure></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise09.css</h3><pre>.photo{position:relative;display:inline-block;width:310px;margin:0 14px 14px 0;vertical-align:top}
+.photo img{display:block;width:100%;border-radius:6px}
+.cap-abs{position:absolute;left:0;right:0;bottom:0;background:rgba(15,107,107,.85);color:#fff;padding:10px 12px;border-radius:0 0 6px 6px}
+.tag9{position:absolute;top:10px;right:10px;background:#e8742c;color:#fff;padding:4px 12px;border-radius:99px;font-weight:700;font-size:13px}
+.cap-rel{position:relative;top:-46px;left:12px;display:inline-block;background:#fff;padding:8px 12px;box-shadow:0 4px 12px #0003}</pre></details>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.15 – Transitions</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise15.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise14.html">← Exercise 7.14</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise16.html">Exercise 7.16 →</a></div>
+<div class="page">
+<h1>Exercise 7.15 – Transitions</h1>
+<p class="lead">Tạo hiệu ứng chuyển đổi thuộc tính khi hover.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Di chuột lên nút và các thanh để thấy thuộc tính thay đổi từ từ thay vì tức thì.</li><li>Các thanh dùng cùng thời lượng 2s nhưng khác <code>transition-timing-function</code> (ease, linear, ease-in, ease-out, ease-in-out).</li></ul></div>
+<div class="stage"><h2>Nút đổi màu và nới rộng khi hover</h2><button class="btn15" type="button">Di chuột vào đây</button></div>
+<div class="stage"><h2>Các hàm timing: di chuột lên khung để chạy</h2><div class="lane">
+  <div class="bar ease">ease</div><div class="bar linear">linear</div><div class="bar easein">ease-in</div>
+  <div class="bar easeout">ease-out</div><div class="bar easeinout">ease-in-out</div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise15.css</h3><pre>.btn15{padding:12px 24px;background:#0f6b6b;color:#fff;border:0;border-radius:6px;font-size:16px;cursor:pointer;
+  transition:background-color .3s, padding .3s, border-radius .3s}
+.btn15:hover{background:#e8742c;padding:12px 44px;border-radius:30px}
+.bar{height:34px;width:70px;line-height:34px;padding-left:10px;margin:6px 0;background:#0f6b6b;color:#fff;font-weight:700;
+  transition-property:width;transition-duration:2s}
+.lane:hover .bar{width:100%}
+.ease{transition-timing-function:ease}
+.linear{transition-timing-function:linear}
+.easein{transition-timing-function:ease-in}
+.easeout{transition-timing-function:ease-out}
+.easeinout{transition-timing-function:ease-in-out}</pre></details>
+</div>
+
+</body>
+</html>

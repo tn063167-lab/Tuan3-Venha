@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.4 – Stacking Using Z-Index</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise04.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise03.html">← Exercise 7.3</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise05.html">Exercise 7.5 →</a></div>
+<div class="page">
+<h1>Exercise 7.4 – Stacking Using Z-Index</h1>
+<p class="lead">Kiểm soát thứ tự chồng lớp và quan hệ phần tử cha/con.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Phần tử có z-index lớn hơn nằm phía trên (cam: 3, xanh đậm: 2, xanh lá: 1).</li><li>Ví dụ B: con có z-index 999 vẫn nằm DƯỚI hộp cam vì cha của nó (z-index:1) thấp hơn cha của hộp cam (z-index:2).</li></ul></div>
+<div class="stage"><h2>A. Ba hộp chồng nhau với z-index khác nhau</h2>
+  <div class="stack"><div class="sq s1">z-index: 1</div><div class="sq s2">z-index: 3</div><div class="sq s3">z-index: 2</div></div></div>
+<div class="stage"><h2>B. Quan hệ cha/con (stacking context)</h2>
+  <div class="ctx"><div class="p1">Cha 1 (z-index:1)<div class="kid">Con của cha 1 (z-index:999)</div></div>
+  <div class="p2">Cha 2 (z-index:2)</div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise04.css</h3><pre>.stack{position:relative;height:210px}
+.sq{position:absolute;width:150px;height:150px;color:#fff;font-weight:700;padding:10px}
+.s1{left:0;top:0;background:#0f6b6b;z-index:1}
+.s2{left:70px;top:40px;background:#e8742c;z-index:3}
+.s3{left:140px;top:80px;background:#2b3a67;z-index:2}
+.ctx{position:relative;height:200px}
+.p1{position:absolute;left:0;top:0;width:240px;height:150px;background:#cfe8e8;border:2px solid #0f6b6b;z-index:1;padding:8px}
+.p1 .kid{position:absolute;left:120px;top:70px;width:170px;height:100px;background:#0f6b6b;color:#fff;z-index:999;padding:8px}
+.p2{position:absolute;left:200px;top:30px;width:240px;height:150px;background:#ffe3cc;border:2px solid #e8742c;z-index:2;padding:8px}</pre></details>
+</div>
+
+</body>
+</html>

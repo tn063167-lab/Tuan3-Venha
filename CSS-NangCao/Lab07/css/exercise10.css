@@ -1,0 +1,6 @@
+.layout{border:2px solid #0f6b6b}
+.lhead{background:#0f6b6b;color:#fff;padding:14px;font-weight:700}
+.side{float:left;width:200px;background:#cfe8e8;padding:12px;min-height:120px}
+.main{margin-left:224px;padding:12px;background:#fff}
+.lfoot{clear:both;background:#2b3a67;color:#fff;padding:12px}
+.side h3,.main h3{margin-top:0}

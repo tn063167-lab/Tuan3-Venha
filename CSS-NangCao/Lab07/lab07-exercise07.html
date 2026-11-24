@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.7 – Floating Multiple Items</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise07.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise06.html">← Exercise 7.6</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise08.html">Exercise 7.8 →</a></div>
+<div class="page">
+<h1>Exercise 7.7 – Floating Multiple Items</h1>
+<p class="lead">Bố trí nhiều phần tử float và quan sát khi thay đổi kích thước cửa sổ.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Nhóm A dùng chiều rộng theo phần trăm nên luôn chia đều thành hàng 4 ô và co giãn theo cửa sổ.</li><li>Nhóm B dùng chiều rộng cố định 150px nên khi thu hẹp cửa sổ các ô tự rớt xuống hàng dưới.</li><li>Kéo thay đổi kích thước cửa sổ và xem số hiển thị ở góc dưới bên phải.</li></ul></div>
+<div class="stage"><h2>A. Float với chiều rộng theo phần trăm (23%)</h2>
+  <div class="clearfix"><div class="it p">1</div><div class="it p">2</div><div class="it p">3</div><div class="it p">4</div>
+  <div class="it p">5</div><div class="it p">6</div><div class="it p">7</div><div class="it p">8</div></div></div>
+<div class="stage"><h2>B. Float với chiều rộng cố định (150px)</h2>
+  <div class="clearfix"><div class="it f">1</div><div class="it f">2</div><div class="it f">3</div><div class="it f">4</div>
+  <div class="it f">5</div><div class="it f">6</div><div class="it f">7</div><div class="it f">8</div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise07.css</h3><pre>.it{float:left;height:80px;margin:1%;padding:12px;color:#fff;font-weight:700;font-size:20px}
+.p{width:23%;background:#0f6b6b}
+.f{width:150px;background:#e8742c}
+.clearfix::after{content:&quot;&quot;;display:block;clear:both}</pre></details>
+</div>
+<script src="js/width.js"></script>
+</body>
+</html>

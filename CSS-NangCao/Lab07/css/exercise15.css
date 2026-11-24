@@ -1,0 +1,11 @@
+.btn15{padding:12px 24px;background:#0f6b6b;color:#fff;border:0;border-radius:6px;font-size:16px;cursor:pointer;
+  transition:background-color .3s, padding .3s, border-radius .3s}
+.btn15:hover{background:#e8742c;padding:12px 44px;border-radius:30px}
+.bar{height:34px;width:70px;line-height:34px;padding-left:10px;margin:6px 0;background:#0f6b6b;color:#fff;font-weight:700;
+  transition-property:width;transition-duration:2s}
+.lane:hover .bar{width:100%}
+.ease{transition-timing-function:ease}
+.linear{transition-timing-function:linear}
+.easein{transition-timing-function:ease-in}
+.easeout{transition-timing-function:ease-out}
+.easeinout{transition-timing-function:ease-in-out}

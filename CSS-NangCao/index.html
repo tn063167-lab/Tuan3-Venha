@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS nâng cao – Lab 07 | [HỌ VÀ TÊN]</title>
+<style>
+:root{--ink:#1d2433;--muted:#5b6578;--line:#e3e7ef;--bg:#f4f6fb;--card:#fff;--brand:#0f6b6b;--brand2:#e8742c;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.3px;color:var(--brand);text-decoration:none}
+nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;transition:color .2s}
+nav a:hover{color:var(--brand2)}
+.hero{background:linear-gradient(135deg,#0f6b6b 0%,#14506b 60%,#2b3a67 100%);color:#fff;padding:56px 0 64px}
+.hero .wrap{display:flex;gap:36px;align-items:center}
+.avatar{position:relative;flex:0 0 168px;width:168px;height:168px;border-radius:50%;background:#ffffff22;border:4px solid #ffffff66;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;overflow:hidden;transition:transform .4s,box-shadow .4s}
+.avatar:hover{transform:rotate(-4deg) scale(1.05);box-shadow:0 12px 30px #0006}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,4vw,40px);line-height:1.2}
+.hero .sub{margin:0 0 18px;opacity:.9;font-size:18px}
+.info{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:16px}
+.info dt{opacity:.75}.info dd{margin:0;font-weight:600}
+.info a{color:#ffd9bd}
+section{padding:44px 0 8px}
+h2{font-size:26px;margin:0 0 6px;position:relative;padding-bottom:10px}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:2px;background:var(--brand2)}
+.lead{color:var(--muted);margin:10px 0 22px;max-width:760px}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px #1d243318}
+.card h3{margin:0 0 4px;font-size:18px}
+.tag{display:inline-block;background:#e6f2f2;color:var(--brand);font-weight:700;font-size:12px;padding:2px 10px;border-radius:99px;margin-bottom:8px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;flex-direction:column;text-decoration:none;background:#f1f5fa;border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px;color:var(--ink);transition:background .2s,color .2s,transform .2s}
+.chip small{font-weight:400;color:var(--muted);font-size:12px}
+.chip:hover{background:var(--brand);color:#fff;transform:scale(1.04)}
+.chip:hover small{color:#dff}
+.skills{margin:0;padding-left:20px}.skills li{margin:6px 0}
+.skills b{color:var(--brand)}
+.note{border-left:4px solid var(--brand2);background:#fff7f0;padding:14px 18px;border-radius:0 var(--r) var(--r) 0}
+.btn{display:inline-block;background:var(--brand2);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:99px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #e8742c55}
+footer{margin-top:48px;background:#101624;color:#aab3c5;padding:26px 0;font-size:14px;text-align:center}
+@media (max-width:860px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+ .hero .wrap{flex-direction:column;text-align:center}
+ .info{text-align:left}
+ .g3,.g2{grid-template-columns:1fr}
+ nav a{margin:0 12px 0 0}
+ header.top .wrap{padding-top:8px;padding-bottom:8px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top">CSS-NangCao</a>
+  <nav><a href="#gioi-thieu">Giới thiệu</a><a href="#exercise">Exercise</a><a href="#kien-thuc">Kiến thức</a><a href="#tong-ket">Tự đánh giá</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <!-- Ảnh đại diện: lưu ảnh của bạn thành images/avatar.jpg (cùng cấp với index.html); chưa có ảnh thì hiện chữ viết tắt -->
+  <div class="avatar"><span>SV</span><img src="images/avatar.jpg" alt="Ảnh đại diện" onerror="this.remove()"></div>
+  <div>
+    <h1>[HỌ VÀ TÊN]</h1>
+    <p class="sub">Phát triển ứng dụng WEB/TMĐT · Chương 5: Advanced CSS – Layout</p>
+    <dl class="info">
+      <dt>Mã số sinh viên</dt><dd>[MSSV]</dd>
+      <dt>Lớp học phần</dt><dd>[LỚP HỌC PHẦN]</dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/tn063167-lab" target="_blank" rel="noopener">github.com/tn063167-lab</a></dd>
+      <dt>Repository</dt><dd><a href="https://github.com/tn063167-lab/Tuan3-Venha" target="_blank" rel="noopener">Tuan3-Venha</a></dd>
+    </dl>
+  </div>
+</div></div>
+
+<main class="wrap">
+
+<section id="gioi-thieu">
+  <h2>Giới thiệu bài thực hành</h2>
+  <p class="lead">Lab 07 – Advanced CSS: Layout giúp mình làm chủ cách trình duyệt sắp xếp các phần tử trên trang và biến một trang tĩnh thành giao diện responsive, có hiệu ứng tương tác. Qua 19 Exercise, mình thực hành từ document flow, định vị phần tử, float, bố cục nhiều cột, media queries, cho đến transforms, transitions, filters, animations và Bootstrap grid. CSS nâng cao đóng vai trò nền tảng khi xây dựng giao diện website thương mại điện tử: danh mục sản phẩm nhiều cột, menu thích ứng điện thoại, thẻ sản phẩm có hiệu ứng hover và banner bắt mắt.</p>
+</section>
+
+<section id="exercise">
+  <h2>Danh sách Exercise</h2>
+  <p class="lead">Chọn một Exercise để mở trang kết quả, hoặc mở <a href="Lab07/index.html">trang danh sách đầy đủ của Lab 07</a>.</p>
+  <div class="grid g3"><article class="card"><span class="tag">Exercise 7.1 – 7.4</span><h3>Document flow, positioning, z-index</h3><p>Nhóm bài 7.1 – 7.4.</p><div class="chips"><a class="chip" href="Lab07/lab07-exercise01.html" title="Quan sát và thay đổi cách phần tử inline/block hiển thị bằng display">Exercise 7.1<small>Document Flow</small></a><a class="chip" href="Lab07/lab07-exercise02.html" title="Định vị tương đối và quan sát ảnh hưởng đến document flow">Exercise 7.2<small>Relative Positioning</small></a><a class="chip" href="Lab07/lab07-exercise03.html" title="Định vị tuyệt đối so với ancestor gần nhất có position">Exercise 7.3<small>Absolute Positioning</small></a><a class="chip" href="Lab07/lab07-exercise04.html" title="Kiểm soát thứ tự chồng lớp và quan hệ phần tử cha/con">Exercise 7.4<small>Stacking Using Z-Index</small></a></div></article><article class="card"><span class="tag">Exercise 7.5 – 7.9</span><h3>Float, clear và positioning</h3><p>Nhóm bài 7.5 – 7.9.</p><div class="chips"><a class="chip" href="Lab07/lab07-exercise05.html" title="Sử dụng float: left và float: right">Exercise 7.5<small>Floating Elements</small></a><a class="chip" href="Lab07/lab07-exercise06.html" title="Bố trí phần tử float bên trong container">Exercise 7.6<small>Floating in a Container</small></a><a class="chip" href="Lab07/lab07-exercise07.html" title="Bố trí nhiều phần tử float, quan sát khi đổi kích thước cửa sổ">Exercise 7.7<small>Floating Multiple Items</small></a><a class="chip" href="Lab07/lab07-exercise08.html" title="Dùng clear để xử lý bố cục sau các phần tử float">Exercise 7.8<small>Floating and Clearing</small></a><a class="chip" href="Lab07/lab07-exercise09.html" title="Kết hợp relative và absolute để đặt caption/ảnh chồng lên nhau">Exercise 7.9<small>Using Positioning</small></a></div></article><article class="card"><span class="tag">Exercise 7.10 – 7.13</span><h3>Multi-column layout, responsive design, viewport</h3><p>Nhóm bài 7.10 – 7.13.</p><div class="chips"><a class="chip" href="Lab07/lab07-exercise10.html" title="Bố cục hai cột bằng margin và float">Exercise 7.10<small>Two-Column Layout</small></a><a class="chip" href="Lab07/lab07-exercise11.html" title="Bố cục ba cột bằng positioning">Exercise 7.11<small>Three-Column Layout</small></a><a class="chip" href="Lab07/lab07-exercise12.html" title="Stylesheet desktop/mobile, đổi bố cục theo chiều rộng màn hình">Exercise 7.12<small>Media Queries</small></a><a class="chip" href="Lab07/lab07-exercise12.html" title="Khai báo viewport và điều chỉnh điều hướng (làm trên bộ file của 7.12)">Exercise 7.13<small>Setting the Viewport</small></a></div></article><article class="card"><span class="tag">Exercise 7.14 – 7.18</span><h3>Transforms, transitions, filters, animations</h3><p>Nhóm bài 7.14 – 7.18.</p><div class="chips"><a class="chip" href="Lab07/lab07-exercise14.html" title="Rotate, skew, translate và scale">Exercise 7.14<small>Transforms</small></a><a class="chip" href="Lab07/lab07-exercise15.html" title="Hiệu ứng chuyển đổi thuộc tính khi hover">Exercise 7.15<small>Transitions</small></a><a class="chip" href="Lab07/lab07-exercise16.html" title="Kết hợp nhiều thuộc tính và hiệu ứng chuyển đổi">Exercise 7.16<small>More Transitions</small></a><a class="chip" href="Lab07/lab07-exercise17.html" title="Saturate, grayscale, contrast, brightness, blur, invert, sepia, hue-rotate, opacity">Exercise 7.17<small>Filters</small></a><a class="chip" href="Lab07/lab07-exercise18.html" title="@keyframes, animation-duration, iteration-count, delay và shorthand">Exercise 7.18<small>Animations</small></a></div></article><article class="card"><span class="tag">Exercise 7.19</span><h3>Bootstrap grid system</h3><p>Nhóm bài 7.19.</p><div class="chips"><a class="chip" href="Lab07/lab07-exercise19.html" title="Bootstrap grid, navbar, panel, list-group, jumbotron, button, nested columns">Exercise 7.19<small>Using Bootstrap</small></a></div></article></div>
+  <p style="margin-top:18px"><a class="btn" href="Lab07/index.html">Xem tất cả Exercise →</a></p>
+</section>
+
+<section id="kien-thuc">
+  <h2>Kiến thức và kỹ năng đã học</h2>
+  <div class="card" style="margin-top:14px"><ul class="skills">
+    <li><b>Document flow và định vị:</b> thay đổi cách hiển thị bằng <code>display</code>; dùng <code>position: relative</code> và <code>absolute</code>; kiểm soát thứ tự chồng lớp bằng <code>z-index</code>.</li>
+    <li><b>Float và clear:</b> đưa phần tử sang trái hoặc phải, cho nội dung bao quanh, và dùng <code>clear</code> để bố cục phía sau không bị lệch.</li>
+    <li><b>Bố cục nhiều cột:</b> dựng bố cục hai cột bằng margin và float, ba cột bằng positioning.</li>
+    <li><b>Responsive:</b> dùng media queries và thẻ viewport để một trang thích ứng cả máy tính lẫn điện thoại.</li>
+    <li><b>Hiệu ứng:</b> transforms, transitions, filters và animations (<code>@keyframes</code>) để giao diện sinh động hơn.</li>
+    <li><b>Bootstrap:</b> dùng grid system, navbar và các thành phần có sẵn để dựng layout nhanh.</li>
+  </ul></div>
+</section>
+
+<section id="tong-ket">
+  <h2>Tự đánh giá sau khi hoàn thành</h2>
+  <div class="note" style="margin-top:14px">
+    <!-- BẠN HÃY SỬA ĐOẠN NÀY THEO TRẢI NGHIỆM THẬT CỦA MÌNH (khoảng 100–150 từ) -->
+    <p>Sau Lab 07, mình hiểu rõ hơn cách trình duyệt xếp các phần tử và cách CSS điều khiển chúng. Kỹ thuật quan trọng nhất mình học được là bố cục bằng float, positioning và media queries, vì đây là nền tảng để dựng giao diện responsive. Mình thấy các Exercise về float và clear khó hơn cả, do chỉ cần thiếu <code>clear</code> là bố cục bị vỡ, còn các Exercise về transitions và animations thì thú vị và dễ thấy kết quả ngay.</p>
+    <p>Mình có thể áp dụng các kỹ thuật này vào website thương mại điện tử: dùng Bootstrap grid hoặc media queries để trang danh mục sản phẩm hiển thị nhiều cột trên máy tính và một cột trên điện thoại; dùng transitions và transforms cho hiệu ứng hover của thẻ sản phẩm; dùng positioning để đặt nhãn giảm giá lên ảnh sản phẩm; và dùng viewport cùng navbar thu gọn để menu dễ dùng trên điện thoại.</p>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">© [HỌ VÀ TÊN] – [MSSV] · Phát triển ứng dụng WEB/TMĐT · CSS nâng cao – Lab 07</div></footer>
+</body>
+</html>

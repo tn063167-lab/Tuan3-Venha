@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.1 – Document Flow</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise01.css">
+</head>
+<body>
+<div class="topbar"><span></span><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise02.html">Exercise 7.2 →</a></div>
+<div class="page">
+<h1>Exercise 7.1 – Document Flow</h1>
+<p class="lead">Quan sát và thay đổi cách phần tử inline/block hiển thị bằng thuộc tính display.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Thẻ <code>div</code> mặc định là block: mỗi thẻ chiếm trọn một dòng, xếp từ trên xuống.</li><li>Thẻ <code>span</code> mặc định là inline: nằm cùng dòng, chỉ rộng bằng nội dung.</li><li>Đổi sang <code>display:inline</code>, <code>block</code>, <code>inline-block</code> hoặc <code>none</code> để thấy luồng tài liệu thay đổi.</li></ul></div>
+<div class="stage"><h2>1. Mặc định: div là block, span là inline</h2>
+  <div class="blk">Div 1</div><div class="blk">Div 2</div><div class="blk">Div 3</div>
+  <p><span class="inl">Span A</span><span class="inl">Span B</span><span class="inl">Span C</span></p></div>
+<div class="stage as-inline"><h2>2. Đổi div thành <code>display:inline</code></h2>
+  <div class="blk">Div 1</div><div class="blk">Div 2</div><div class="blk">Div 3</div></div>
+<div class="stage as-block"><h2>3. Đổi span thành <code>display:block</code></h2>
+  <span class="inl">Span A</span><span class="inl">Span B</span><span class="inl">Span C</span></div>
+<div class="stage as-ib"><h2>4. <code>display:inline-block</code>: nằm cùng dòng nhưng đặt được width/height</h2>
+  <div class="blk">Div 1</div><div class="blk">Div 2</div><div class="blk">Div 3</div></div>
+<div class="stage as-none"><h2>5. <code>display:none</code>: Div 2 biến mất hoàn toàn khỏi document flow</h2>
+  <div class="blk">Div 1</div><div class="blk hide">Div 2 (đã ẩn)</div><div class="blk">Div 3</div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise01.css</h3><pre>.blk{background:#cfe8e8;border:1px solid #0f6b6b;padding:8px;margin:4px 0}
+.inl{background:#ffe3cc;border:1px solid #e8742c;padding:8px}
+.as-inline .blk{display:inline}
+.as-block .inl{display:block;margin:4px 0}
+.as-ib .blk{display:inline-block;width:120px;height:60px}
+.as-none .hide{display:none}</pre></details>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.17 – Filters</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise17.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise16.html">← Exercise 7.16</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise18.html">Exercise 7.18 →</a></div>
+<div class="page">
+<h1>Exercise 7.17 – Filters</h1>
+<p class="lead">Thực hành saturate, grayscale, contrast, brightness, blur, invert, sepia, hue-rotate và opacity.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Cùng một ảnh gốc nhưng áp dụng từng bộ lọc khác nhau.</li><li>Di chuột lên ảnh để bỏ bộ lọc (kết hợp transition) và so sánh với ảnh gốc.</li></ul></div>
+<div class="stage"><h2>Ảnh gốc và các bộ lọc</h2>
+  <figure class="fx"><img src="images/scene2.jpg" alt=""><figcaption>Ảnh gốc</figcaption></figure>
+  <figure class="fx saturate"><img src="images/scene2.jpg" alt=""><figcaption>saturate(300%)</figcaption></figure>
+  <figure class="fx grayscale"><img src="images/scene2.jpg" alt=""><figcaption>grayscale(100%)</figcaption></figure>
+  <figure class="fx contrast"><img src="images/scene2.jpg" alt=""><figcaption>contrast(200%)</figcaption></figure>
+  <figure class="fx brightness"><img src="images/scene2.jpg" alt=""><figcaption>brightness(150%)</figcaption></figure>
+  <figure class="fx blur"><img src="images/scene2.jpg" alt=""><figcaption>blur(4px)</figcaption></figure>
+  <figure class="fx invert"><img src="images/scene2.jpg" alt=""><figcaption>invert(100%)</figcaption></figure>
+  <figure class="fx sepia"><img src="images/scene2.jpg" alt=""><figcaption>sepia(100%)</figcaption></figure>
+  <figure class="fx hue"><img src="images/scene2.jpg" alt=""><figcaption>hue-rotate(120deg)</figcaption></figure>
+  <figure class="fx opacity"><img src="images/scene2.jpg" alt=""><figcaption>opacity(40%)</figcaption></figure></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise17.css</h3><pre>.fx{display:inline-block;margin:8px;text-align:center;font-size:13px;vertical-align:top}
+.fx img{display:block;width:170px;height:115px;object-fit:cover;border-radius:8px;transition:filter .5s}
+.fx figcaption{margin-top:4px}
+.saturate img{filter:saturate(300%)}
+.grayscale img{filter:grayscale(100%)}
+.contrast img{filter:contrast(200%)}
+.brightness img{filter:brightness(150%)}
+.blur img{filter:blur(4px)}
+.invert img{filter:invert(100%)}
+.sepia img{filter:sepia(100%)}
+.hue img{filter:hue-rotate(120deg)}
+.opacity img{filter:opacity(40%)}
+.fx:hover img{filter:none}</pre></details>
+</div>
+
+</body>
+</html>

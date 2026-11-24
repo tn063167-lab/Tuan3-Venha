@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.18 – Animations</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise18.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise17.html">← Exercise 7.17</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise19.html">Exercise 7.19 →</a></div>
+<div class="page">
+<h1>Exercise 7.18 – Animations</h1>
+<p class="lead">Sử dụng @keyframes, animation-duration, iteration-count, delay và shorthand animation.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Mỗi hộp dùng một <code>@keyframes</code> khác nhau: bounce, slide, spin, pulse, đổi màu.</li><li>Hộp slide chạy 3 lần (<code>animation-iteration-count:3</code>) và trễ 1s; các hộp khác chạy vô hạn.</li><li>Hộp spin và pulse dùng cú pháp rút gọn (shorthand) <code>animation: name duration timing delay count direction</code>.</li></ul></div>
+<div class="stage"><h2>Bounce: khai báo từng thuộc tính</h2><div class="track"><div class="shape a-bounce"></div></div></div>
+<div class="stage"><h2>Slide: lặp 3 lần, đảo chiều, trễ 1 giây</h2><div class="track"><div class="shape a-slide"></div></div></div>
+<div class="stage"><h2>Spin: shorthand <code>animation: spin 2s linear infinite</code></h2><div class="track"><div class="shape a-spin"></div></div></div>
+<div class="stage"><h2>Pulse: shorthand có delay <code>animation: pulse 1.5s ease-in-out .5s infinite</code></h2><div class="track"><div class="shape a-pulse"></div></div></div>
+<div class="stage"><h2>Đổi màu: <code>steps(4)</code></h2><div class="track"><div class="shape a-color"></div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise18.css</h3><pre>.track{position:relative;height:100px;background:#f4f6fb;border:1px solid #dfe4ee;overflow:hidden}
+.shape{position:absolute;left:20px;top:20px;width:60px;height:60px;background:#0f6b6b;border-radius:10px}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-34px)}}
+@keyframes slide{from{left:20px}to{left:calc(100% - 80px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:.55}}
+@keyframes colorshift{0%{background:#0f6b6b}50%{background:#e8742c}100%{background:#2b3a67}}
+.a-bounce{animation-name:bounce;animation-duration:1.2s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.a-slide{background:#e8742c;animation-name:slide;animation-duration:3s;animation-delay:1s;animation-iteration-count:3;animation-direction:alternate;animation-timing-function:ease-in-out}
+.a-spin{background:#2b3a67;animation:spin 2s linear infinite}
+.a-pulse{background:#7a3e9d;animation:pulse 1.5s ease-in-out .5s infinite}
+.a-color{animation:colorshift 4s steps(4) infinite alternate}</pre></details>
+</div>
+
+</body>
+</html>

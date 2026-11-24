@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.19 – Using Bootstrap</title>
+<!-- Bootstrap 3.4.1 nạp từ CDN. Nếu bạn có thư mục bootstrap/ trong file ZIP của thầy, có thể đổi sang: bootstrap/css/bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/exercise19.css">
+</head>
+<body>
+<div class="lab-back"><a href="lab07-exercise18.html">← Exercise 7.18</a> &nbsp;|&nbsp; <a href="index.html">Danh sách Exercise</a></div>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav19" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Cà Phê Việt</a>
+    </div>
+    <div class="collapse navbar-collapse" id="nav19">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Trang chủ</a></li><li><a href="#">Sản phẩm</a></li><li><a href="#">Liên hệ</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right"><li><a href="#">Đăng nhập</a></li></ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Exercise 7.19</h1>
+    <p>Sử dụng Bootstrap: grid, navbar, panel, list-group, jumbotron, button và nested columns.</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Tìm hiểu thêm</a></p>
+  </div>
+
+  <div class="row">
+    <!-- Cột 8 chứa các cột lồng nhau -->
+    <div class="col-md-8">
+      <h3 class="page-title19">Cột col-md-8 và các cột lồng nhau (nested columns)</h3>
+      <div class="row">
+        <div class="col-sm-6"><div class="well">Cột lồng 1 (col-sm-6)</div></div>
+        <div class="col-sm-6"><div class="well">Cột lồng 2 (col-sm-6)</div></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"><div class="well">col-sm-4</div></div>
+        <div class="col-sm-4"><div class="well">col-sm-4</div></div>
+        <div class="col-sm-4"><div class="well">col-sm-4</div></div>
+      </div>
+      <h4>Các kiểu button</h4>
+      <p>
+        <button type="button" class="btn btn-default">Default</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+      </p>
+    </div>
+
+    <!-- Cột 4 -->
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><h3 class="panel-title">Panel</h3></div>
+        <div class="panel-body">Nội dung bên trong panel của Bootstrap.</div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item"><span class="badge">14</span>Cà phê hạt</li>
+        <li class="list-group-item"><span class="badge">9</span>Cà phê bột</li>
+        <li class="list-group-item"><span class="badge">6</span>Cà phê hòa tan</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="observe" style="background:#fff7f0;border-left:4px solid #e8742c;padding:10px 16px;margin-top:20px"><b>Quan sát:</b><ul><li>Trang dùng Bootstrap 3.4.1: navbar có nút thu gọn trên điện thoại, jumbotron, lưới 12 cột.</li><li>Cột 8 chứa hai cột lồng nhau (nested columns); cột 4 chứa panel và list-group.</li><li>Thu hẹp cửa sổ để quan sát các cột xếp chồng lại (<code>col-md-*</code>, <code>col-sm-*</code>).</li></ul></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

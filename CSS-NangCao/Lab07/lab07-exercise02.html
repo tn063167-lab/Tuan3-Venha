@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.2 – Relative Positioning</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise02.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise01.html">← Exercise 7.1</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise03.html">Exercise 7.3 →</a></div>
+<div class="page">
+<h1>Exercise 7.2 – Relative Positioning</h1>
+<p class="lead">Định vị tương đối và quan sát ảnh hưởng đến document flow.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Phần tử có <code>position:relative</code> được dịch so với vị trí ban đầu của chính nó bằng top/left.</li><li>Chỗ trống ban đầu vẫn được giữ: Box 3 không bị kéo lên, nghĩa là document flow không đổi.</li></ul></div>
+<div class="stage"><h2>Trước: ba hộp theo document flow</h2>
+  <div class="box b1">Box 1</div><div class="box b2">Box 2</div><div class="box b3">Box 3</div></div>
+<div class="stage"><h2>Sau: Box 2 có <code>position:relative; top:25px; left:60px</code></h2>
+  <div class="box b1">Box 1</div><div class="box b2 shift">Box 2 (đã dịch)</div><div class="box b3">Box 3 (vẫn ở vị trí cũ)</div></div>
+<div class="stage"><h2>Ví dụ trong dòng chữ</h2>
+  <p>Đây là một câu văn có <span class="word">một từ bị dịch xuống và sang phải</span> nhưng các từ còn lại vẫn nằm yên chỗ cũ.</p></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise02.css</h3><pre>.box{height:54px;margin:6px 0;padding:14px;color:#fff;font-weight:700}
+.b1{background:#0f6b6b}.b2{background:#e8742c}.b3{background:#2b3a67}
+.shift{position:relative;top:25px;left:60px}
+.word{position:relative;top:10px;left:14px;background:#ffd9bd;padding:0 4px}</pre></details>
+</div>
+
+</body>
+</html>

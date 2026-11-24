@@ -1,0 +1,6 @@
+.blk{background:#cfe8e8;border:1px solid #0f6b6b;padding:8px;margin:4px 0}
+.inl{background:#ffe3cc;border:1px solid #e8742c;padding:8px}
+.as-inline .blk{display:inline}
+.as-block .inl{display:block;margin:4px 0}
+.as-ib .blk{display:inline-block;width:120px;height:60px}
+.as-none .hide{display:none}

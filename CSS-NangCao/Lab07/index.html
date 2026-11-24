@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 07 – Advanced CSS: Layout | Danh sách Exercise</title>
+<style>
+:root{--ink:#1d2433;--muted:#5b6578;--line:#e3e7ef;--bg:#f4f6fb;--card:#fff;--brand:#0f6b6b;--brand2:#e8742c;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:.3px;color:var(--brand);text-decoration:none}
+nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;transition:color .2s}
+nav a:hover{color:var(--brand2)}
+.hero{background:linear-gradient(135deg,#0f6b6b 0%,#14506b 60%,#2b3a67 100%);color:#fff;padding:56px 0 64px}
+.hero .wrap{display:flex;gap:36px;align-items:center}
+.avatar{position:relative;flex:0 0 168px;width:168px;height:168px;border-radius:50%;background:#ffffff22;border:4px solid #ffffff66;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;overflow:hidden;transition:transform .4s,box-shadow .4s}
+.avatar:hover{transform:rotate(-4deg) scale(1.05);box-shadow:0 12px 30px #0006}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero h1{margin:0 0 6px;font-size:clamp(26px,4vw,40px);line-height:1.2}
+.hero .sub{margin:0 0 18px;opacity:.9;font-size:18px}
+.info{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:16px}
+.info dt{opacity:.75}.info dd{margin:0;font-weight:600}
+.info a{color:#ffd9bd}
+section{padding:44px 0 8px}
+h2{font-size:26px;margin:0 0 6px;position:relative;padding-bottom:10px}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:2px;background:var(--brand2)}
+.lead{color:var(--muted);margin:10px 0 22px;max-width:760px}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px #1d243318}
+.card h3{margin:0 0 4px;font-size:18px}
+.tag{display:inline-block;background:#e6f2f2;color:var(--brand);font-weight:700;font-size:12px;padding:2px 10px;border-radius:99px;margin-bottom:8px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;flex-direction:column;text-decoration:none;background:#f1f5fa;border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px;color:var(--ink);transition:background .2s,color .2s,transform .2s}
+.chip small{font-weight:400;color:var(--muted);font-size:12px}
+.chip:hover{background:var(--brand);color:#fff;transform:scale(1.04)}
+.chip:hover small{color:#dff}
+.skills{margin:0;padding-left:20px}.skills li{margin:6px 0}
+.skills b{color:var(--brand)}
+.note{border-left:4px solid var(--brand2);background:#fff7f0;padding:14px 18px;border-radius:0 var(--r) var(--r) 0}
+.btn{display:inline-block;background:var(--brand2);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px;border-radius:99px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #e8742c55}
+footer{margin-top:48px;background:#101624;color:#aab3c5;padding:26px 0;font-size:14px;text-align:center}
+@media (max-width:860px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+ .hero .wrap{flex-direction:column;text-align:center}
+ .info{text-align:left}
+ .g3,.g2{grid-template-columns:1fr}
+ nav a{margin:0 12px 0 0}
+ header.top .wrap{padding-top:8px;padding-bottom:8px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="../index.html">← Trang chủ CSS-NangCao</a><nav><a href="#top">Lab 07</a></nav></div></header>
+<main class="wrap" id="top">
+<section>
+  <h1 style="margin:0 0 6px">Lab 07 – Advanced CSS: Layout</h1>
+  <p class="lead">Danh sách 19 Exercise. Exercise 7.13 (Setting the Viewport) được thực hiện trên bộ file của Exercise 7.12 nên cùng mở <code>lab07-exercise12.html</code>.</p>
+  <h2>7.1 – 7.4 <small style="font-weight:400;color:var(--muted);font-size:16px">· Document flow, positioning, z-index</small></h2><div class="grid g2" style="margin:14px 0 26px"><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise01.html"><span class="tag">Exercise 7.1</span><h3>Document Flow</h3><p style="margin:0">Quan sát và thay đổi cách phần tử inline/block hiển thị bằng display</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise02.html"><span class="tag">Exercise 7.2</span><h3>Relative Positioning</h3><p style="margin:0">Định vị tương đối và quan sát ảnh hưởng đến document flow</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise03.html"><span class="tag">Exercise 7.3</span><h3>Absolute Positioning</h3><p style="margin:0">Định vị tuyệt đối so với ancestor gần nhất có position</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise04.html"><span class="tag">Exercise 7.4</span><h3>Stacking Using Z-Index</h3><p style="margin:0">Kiểm soát thứ tự chồng lớp và quan hệ phần tử cha/con</p></a></div><h2>7.5 – 7.9 <small style="font-weight:400;color:var(--muted);font-size:16px">· Float, clear và positioning</small></h2><div class="grid g2" style="margin:14px 0 26px"><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise05.html"><span class="tag">Exercise 7.5</span><h3>Floating Elements</h3><p style="margin:0">Sử dụng float: left và float: right</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise06.html"><span class="tag">Exercise 7.6</span><h3>Floating in a Container</h3><p style="margin:0">Bố trí phần tử float bên trong container</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise07.html"><span class="tag">Exercise 7.7</span><h3>Floating Multiple Items</h3><p style="margin:0">Bố trí nhiều phần tử float, quan sát khi đổi kích thước cửa sổ</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise08.html"><span class="tag">Exercise 7.8</span><h3>Floating and Clearing</h3><p style="margin:0">Dùng clear để xử lý bố cục sau các phần tử float</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise09.html"><span class="tag">Exercise 7.9</span><h3>Using Positioning</h3><p style="margin:0">Kết hợp relative và absolute để đặt caption/ảnh chồng lên nhau</p></a></div><h2>7.10 – 7.13 <small style="font-weight:400;color:var(--muted);font-size:16px">· Multi-column layout, responsive design, viewport</small></h2><div class="grid g2" style="margin:14px 0 26px"><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise10.html"><span class="tag">Exercise 7.10</span><h3>Two-Column Layout</h3><p style="margin:0">Bố cục hai cột bằng margin và float</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise11.html"><span class="tag">Exercise 7.11</span><h3>Three-Column Layout</h3><p style="margin:0">Bố cục ba cột bằng positioning</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise12.html"><span class="tag">Exercise 7.12</span><h3>Media Queries</h3><p style="margin:0">Stylesheet desktop/mobile, đổi bố cục theo chiều rộng màn hình</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise12.html"><span class="tag">Exercise 7.13</span><h3>Setting the Viewport</h3><p style="margin:0">Khai báo viewport và điều chỉnh điều hướng (làm trên bộ file của 7.12)</p></a></div><h2>7.14 – 7.18 <small style="font-weight:400;color:var(--muted);font-size:16px">· Transforms, transitions, filters, animations</small></h2><div class="grid g2" style="margin:14px 0 26px"><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise14.html"><span class="tag">Exercise 7.14</span><h3>Transforms</h3><p style="margin:0">Rotate, skew, translate và scale</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise15.html"><span class="tag">Exercise 7.15</span><h3>Transitions</h3><p style="margin:0">Hiệu ứng chuyển đổi thuộc tính khi hover</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise16.html"><span class="tag">Exercise 7.16</span><h3>More Transitions</h3><p style="margin:0">Kết hợp nhiều thuộc tính và hiệu ứng chuyển đổi</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise17.html"><span class="tag">Exercise 7.17</span><h3>Filters</h3><p style="margin:0">Saturate, grayscale, contrast, brightness, blur, invert, sepia, hue-rotate, opacity</p></a><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise18.html"><span class="tag">Exercise 7.18</span><h3>Animations</h3><p style="margin:0">@keyframes, animation-duration, iteration-count, delay và shorthand</p></a></div><h2>7.19 <small style="font-weight:400;color:var(--muted);font-size:16px">· Bootstrap grid system</small></h2><div class="grid g2" style="margin:14px 0 26px"><a class="card" style="text-decoration:none;color:inherit" href="lab07-exercise19.html"><span class="tag">Exercise 7.19</span><h3>Using Bootstrap</h3><p style="margin:0">Bootstrap grid, navbar, panel, list-group, jumbotron, button, nested columns</p></a></div>
+</section>
+</main>
+<footer><div class="wrap">Lab 07 – Advanced CSS: Layout · [HỌ VÀ TÊN] – [MSSV]</div></footer>
+</body>
+</html>

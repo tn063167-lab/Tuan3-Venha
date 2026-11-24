@@ -1,0 +1,5 @@
+.wrap3{position:relative;border:2px solid #0f6b6b;background:#fff}
+.left3{position:absolute;top:0;left:0;width:20%;background:#cfe8e8;padding:12px}
+.right3{position:absolute;top:0;right:0;width:20%;background:#ffe3cc;padding:12px}
+.center3{margin:0 21%;padding:12px;background:#f4f6fb}
+.left3 h3,.right3 h3,.center3 h3{margin-top:0}

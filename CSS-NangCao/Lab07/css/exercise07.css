@@ -1,0 +1,4 @@
+.it{float:left;height:80px;margin:1%;padding:12px;color:#fff;font-weight:700;font-size:20px}
+.p{width:23%;background:#0f6b6b}
+.f{width:150px;background:#e8742c}
+.clearfix::after{content:"";display:block;clear:both}

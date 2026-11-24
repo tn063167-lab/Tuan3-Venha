@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.3 – Absolute Positioning</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise03.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise02.html">← Exercise 7.2</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise04.html">Exercise 7.4 →</a></div>
+<div class="page">
+<h1>Exercise 7.3 – Absolute Positioning</h1>
+<p class="lead">Định vị tuyệt đối so với ancestor gần nhất có thuộc tính position.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Phần tử <code>position:absolute</code> bị lấy ra khỏi document flow và căn theo ancestor gần nhất có position.</li><li>Ví dụ A: cha có <code>position:relative</code> nên các nhãn bám vào góc của cha.</li><li>Ví dụ B: cha trực tiếp không có position nên nhãn bám vào khung ngoài (ancestor gần nhất có position).</li></ul></div>
+<div class="stage"><h2>A. Cha có <code>position:relative</code></h2>
+  <div class="pA">Khung cha (relative)
+    <div class="chA tr">top:10px; right:10px</div>
+    <div class="chA bl">bottom:10px; left:10px</div>
+    <div class="chA mid">top:60px; left:40%</div></div></div>
+<div class="stage"><h2>B. Cha trực tiếp KHÔNG có position</h2>
+  <div class="outer">Khung ngoài (relative)
+    <div class="inner">Khung giữa (không có position)
+      <div class="kid">top:0; right:0 → bám khung ngoài</div></div></div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise03.css</h3><pre>.pA{position:relative;height:170px;background:#cfe8e8;border:2px solid #0f6b6b;padding:10px}
+.chA{position:absolute;padding:6px 10px;background:#0f6b6b;color:#fff}
+.tr{top:10px;right:10px}.bl{bottom:10px;left:10px}.mid{top:60px;left:40%;background:#e8742c}
+.outer{position:relative;height:230px;background:#fff3e8;border:2px solid #e8742c;padding:10px}
+.inner{height:120px;margin-top:50px;background:#eee;border:2px dashed #888;padding:10px}
+.kid{position:absolute;top:0;right:0;background:#e8742c;color:#fff;padding:6px 10px}</pre></details>
+</div>
+
+</body>
+</html>

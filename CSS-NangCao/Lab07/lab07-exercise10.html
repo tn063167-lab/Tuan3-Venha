@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.10 – Two-Column Layout</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise10.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise09.html">← Exercise 7.9</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise11.html">Exercise 7.11 →</a></div>
+<div class="page">
+<h1>Exercise 7.10 – Two-Column Layout</h1>
+<p class="lead">Xây dựng bố cục hai cột bằng margin và float.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Cột bên (sidebar) dùng <code>float:left</code> với chiều rộng cố định.</li><li>Cột nội dung dùng <code>margin-left</code> lớn hơn chiều rộng sidebar nên chữ không chảy xuống dưới sidebar khi dài hơn.</li><li>Footer dùng <code>clear:both</code> để nằm dưới cả hai cột.</li></ul></div>
+<div class="stage"><div class="layout">
+  <div class="lhead">Header</div>
+  <div class="side"><h3>Sidebar</h3><ul><li>Trang chủ</li><li>Sản phẩm</li><li>Liên hệ</li></ul></div>
+  <div class="main"><h3>Nội dung chính</h3><p>Float là thuộc tính CSS dùng để đẩy một phần tử sang bên trái hoặc bên phải khung chứa, để nội dung còn lại chảy bao quanh nó. Ban đầu float chỉ được dùng để cho chữ bao quanh hình ảnh, nhưng sau đó được dùng rộng rãi để dựng bố cục nhiều cột cho cả trang web. Vì phần tử float bị đưa ra khỏi document flow, khung chứa có thể co lại và các phần tử phía sau có thể bị chồng lên nếu không xử lý bằng clear.</p><p>Khi quan sát kết quả, hãy thử thay đổi kích thước cửa sổ trình duyệt để thấy chữ tự động xuống dòng và chảy quanh hình ảnh. Đây là cách trình duyệt tính toán lại vị trí của từng dòng chữ dựa trên chỗ còn trống bên cạnh phần tử float.</p></div>
+  <div class="lfoot">Footer (clear:both)</div>
+</div></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise10.css</h3><pre>.layout{border:2px solid #0f6b6b}
+.lhead{background:#0f6b6b;color:#fff;padding:14px;font-weight:700}
+.side{float:left;width:200px;background:#cfe8e8;padding:12px;min-height:120px}
+.main{margin-left:224px;padding:12px;background:#fff}
+.lfoot{clear:both;background:#2b3a67;color:#fff;padding:12px}
+.side h3,.main h3{margin-top:0}</pre></details>
+</div>
+<script src="js/width.js"></script>
+</body>
+</html>

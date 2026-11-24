@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.6 – Floating in a Container</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise06.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise05.html">← Exercise 7.5</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise07.html">Exercise 7.7 →</a></div>
+<div class="page">
+<h1>Exercise 7.6 – Floating in a Container</h1>
+<p class="lead">Bố trí phần tử float bên trong container.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Container chỉ chứa phần tử float sẽ bị co lại còn 0 chiều cao (khung đỏ chỉ còn một đường).</li><li>Hai cách khắc phục: clearfix (<code>::after</code> với <code>clear:both</code>) hoặc <code>overflow:hidden</code> cho container.</li></ul></div>
+<div class="stage"><h2>A. Không xử lý: container bị co lại</h2>
+  <div class="c c1"><div class="fbox">1</div><div class="fbox">2</div><div class="fbox">3</div></div>
+  <p class="after">Đoạn chữ này nằm ngay sau container nên bị các hộp float chồng lên.</p></div>
+<div class="stage"><h2>B. Dùng clearfix (<code>::after</code>)</h2>
+  <div class="c c2 clearfix"><div class="fbox">1</div><div class="fbox">2</div><div class="fbox">3</div></div>
+  <p class="after">Container đã bao trọn các hộp float.</p></div>
+<div class="stage"><h2>C. Dùng <code>overflow:hidden</code></h2>
+  <div class="c c3"><div class="fbox">1</div><div class="fbox">2</div><div class="fbox">3</div></div>
+  <p class="after">Container đã bao trọn các hộp float.</p></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise06.css</h3><pre>.c{border:3px solid #c0392b;background:#fff3f0}
+.fbox{float:left;width:30%;height:70px;margin:1.5%;background:#0f6b6b;color:#fff;font-weight:700;padding:10px}
+.clearfix::after{content:&quot;&quot;;display:block;clear:both}
+.c2{border-color:#0f6b6b;background:#e8f5f5}
+.c3{overflow:hidden;border-color:#e8742c;background:#fff3e8}</pre></details>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* Chỉ áp dụng khi chiều rộng từ 601px trở lên */
+.s-head{overflow:hidden}
+.logo{float:left;line-height:34px}
+.s-nav{float:right}
+.s-nav li{float:left}
+.s-nav a{display:block;padding:7px 14px}
+.s-nav a:hover{background:#ffffff33;border-radius:6px}
+.s-cards{overflow:hidden}
+.s-card{float:left;width:31.33%;margin:1%}

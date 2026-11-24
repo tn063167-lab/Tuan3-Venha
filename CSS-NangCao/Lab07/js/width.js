@@ -1,0 +1,1 @@
+(function(){var b=document.createElement('div');b.className='widthbadge';document.body.appendChild(b);function u(){b.textContent='Rộng cửa sổ: '+window.innerWidth+'px'}u();window.addEventListener('resize',u);})();

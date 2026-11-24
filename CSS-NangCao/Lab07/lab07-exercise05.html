@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<!-- Exercise 7.13: khai báo viewport để thiết bị di động dùng đúng chiều rộng màn hình -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercise 7.5 – Floating Elements</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/exercise05.css">
+</head>
+<body>
+<div class="topbar"><a href="lab07-exercise04.html">← Exercise 7.4</a><a href="index.html">Danh sách Exercise</a><a href="lab07-exercise06.html">Exercise 7.6 →</a></div>
+<div class="page">
+<h1>Exercise 7.5 – Floating Elements</h1>
+<p class="lead">Sử dụng float: left và float: right.</p>
+<div class="observe"><b>Quan sát:</b><ul><li>Ảnh <code>float:left</code> nằm bên trái, chữ chảy quanh bên phải.</li><li>Ảnh <code>float:right</code> nằm bên phải, chữ chảy quanh bên trái.</li></ul></div>
+<div class="stage contain"><h2>A. <code>float:left</code></h2>
+  <img class="fl" src="images/scene1.jpg" width="220" alt="Ảnh 1"><p>Float là thuộc tính CSS dùng để đẩy một phần tử sang bên trái hoặc bên phải khung chứa, để nội dung còn lại chảy bao quanh nó. Ban đầu float chỉ được dùng để cho chữ bao quanh hình ảnh, nhưng sau đó được dùng rộng rãi để dựng bố cục nhiều cột cho cả trang web. Vì phần tử float bị đưa ra khỏi document flow, khung chứa có thể co lại và các phần tử phía sau có thể bị chồng lên nếu không xử lý bằng clear.</p><p>Khi quan sát kết quả, hãy thử thay đổi kích thước cửa sổ trình duyệt để thấy chữ tự động xuống dòng và chảy quanh hình ảnh. Đây là cách trình duyệt tính toán lại vị trí của từng dòng chữ dựa trên chỗ còn trống bên cạnh phần tử float.</p></div>
+<div class="stage contain"><h2>B. <code>float:right</code></h2>
+  <img class="fr" src="images/scene2.jpg" width="220" alt="Ảnh 2"><p>Float là thuộc tính CSS dùng để đẩy một phần tử sang bên trái hoặc bên phải khung chứa, để nội dung còn lại chảy bao quanh nó. Ban đầu float chỉ được dùng để cho chữ bao quanh hình ảnh, nhưng sau đó được dùng rộng rãi để dựng bố cục nhiều cột cho cả trang web. Vì phần tử float bị đưa ra khỏi document flow, khung chứa có thể co lại và các phần tử phía sau có thể bị chồng lên nếu không xử lý bằng clear.</p><p>Khi quan sát kết quả, hãy thử thay đổi kích thước cửa sổ trình duyệt để thấy chữ tự động xuống dòng và chảy quanh hình ảnh. Đây là cách trình duyệt tính toán lại vị trí của từng dòng chữ dựa trên chỗ còn trống bên cạnh phần tử float.</p></div>
+<details class="code" open><summary>Xem mã CSS của Exercise</summary><h3>css/exercise05.css</h3><pre>.fl{float:left;margin:0 16px 8px 0;border-radius:8px}
+.fr{float:right;margin:0 0 8px 16px;border-radius:8px}
+.contain{overflow:auto}</pre></details>
+</div>
+
+</body>
+</html>

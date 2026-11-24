@@ -1,0 +1,1 @@
+(function(){var el=document.getElementById('mq-info');if(!el)return;var mq=window.matchMedia('(max-width: 600px)');function u(){el.textContent=mq.matches?'Đang áp dụng: exercise12-mobile.css (chiều rộng ≤ 600px)':'Đang áp dụng: exercise12-desktop.css (chiều rộng ≥ 601px)'}u();if(mq.addEventListener){mq.addEventListener('change',u)}else{mq.addListener(u)}})();

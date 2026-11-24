@@ -1,0 +1,5 @@
+.photo{position:relative;display:inline-block;width:310px;margin:0 14px 14px 0;vertical-align:top}
+.photo img{display:block;width:100%;border-radius:6px}
+.cap-abs{position:absolute;left:0;right:0;bottom:0;background:rgba(15,107,107,.85);color:#fff;padding:10px 12px;border-radius:0 0 6px 6px}
+.tag9{position:absolute;top:10px;right:10px;background:#e8742c;color:#fff;padding:4px 12px;border-radius:99px;font-weight:700;font-size:13px}
+.cap-rel{position:relative;top:-46px;left:12px;display:inline-block;background:#fff;padding:8px 12px;box-shadow:0 4px 12px #0003}
