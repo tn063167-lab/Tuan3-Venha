@@ -1,9 +1,8 @@
 # CSS nâng cao – Lab 07: Advanced CSS: Layout
 
 ## Thông tin sinh viên
-- Họ và tên: [HỌ VÀ TÊN]
-- Mã số sinh viên: [MSSV]
-- Lớp học phần: [LỚP HỌC PHẦN]
+- Họ và tên: Nguyễn Phúc Thảo Nguyên
+- Mã số sinh viên: 31221023069
 - Học phần: Phát triển ứng dụng WEB/TMĐT – Chương 5: Advanced CSS – Layout
 
 ## Mục tiêu thực hiện Lab 07
