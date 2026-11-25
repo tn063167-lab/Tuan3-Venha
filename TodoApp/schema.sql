@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS tasks (
   created_at  TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 CREATE INDEX IF NOT EXISTS idx_tasks_due ON tasks(due);
+
