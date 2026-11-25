@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+    <style>
+        @keyframes text-shadow-multicolor2 {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                text-shadow: -1px -1px black, -3px -3px red, -5px -5px orange, -7px -7px yellow;
+                transform: translateX(8px) translateY(8px);
+            }
+        }
+
+        .at-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 20px;
+        }
+
+        .at-item {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2b6cb0;
+            animation: text-shadow-multicolor2 2s ease-in-out infinite alternate;
+        }
+
+        img.animate__animated {
+            max-width: 320px;
+            height: auto;
+        }
+    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <div class="at-container">
+        <div class="at-item">ĐẠI HỌC UEH</div>
+    </div>
+
+    <img
+        class="animate__animated animate__rotateIn animate__infinite"
+        src="https://ueh.edu.vn/schools/college/images/logo/bit-header-logo.png"
+        alt="UEH Logo"
+    />
+</body>
+</html>
